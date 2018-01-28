@@ -1,20 +1,107 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div>
+  <div class="mainContent">
+    <div class="person firstPerson">
+      <div class="playerMoney">{{players[0].name}} : {{players[0].money}}</div>
+      <span class="glyphicon glyphicon-user"></span>
+      <div class="playerCard" *ngIf="tableCards.length < 5"></div>
+      <div class="playerCard" *ngIf="tableCards.length < 5"></div>
+      <div class="playerCard openCard" *ngIf="tableCards.length === 5"
+           [ngClass]="{'club': players[0].hand.l.color === 'C',
+                        'diamond': players[0].hand.l.color === 'D',
+                        'heart': players[0].hand.l.color === 'H',
+                        'spade': players[0].hand.l.color === 'S'}"><span class="cardNumber">{{getCardNumber(players[0].hand.l)}}</span></div>
+      <div class="playerCard openCard" *ngIf="tableCards.length === 5"
+           [ngClass]="{'club': players[0].hand.r.color === 'C',
+                        'diamond': players[0].hand.r.color === 'D',
+                        'heart': players[0].hand.r.color === 'H',
+                        'spade': players[0].hand.r.color === 'S'}"><span class="cardNumber">{{getCardNumber(players[0].hand.r)}}</span></div>
+      <div class="playerStock">{{players[0].stock}}</div>
+    </div>
+    <div class="person secondPerson">
+      <div class="playerMoney">{{players[1].name}} : {{players[1].money}}</div>
+      <span class="glyphicon glyphicon-user"></span>
+      <div class="playerCard" *ngIf="tableCards.length < 5"></div>
+      <div class="playerCard" *ngIf="tableCards.length < 5"></div>
+      <div class="playerCard openCard" *ngIf="tableCards.length === 5"
+           [ngClass]="{'club': players[1].hand.l.color === 'C',
+                        'diamond': players[1].hand.l.color === 'D',
+                        'heart': players[1].hand.l.color === 'H',
+                        'spade': players[1].hand.l.color === 'S'}"><span class="cardNumber">{{getCardNumber(players[1].hand.l)}}</span></div>
+      <div class="playerCard openCard" *ngIf="tableCards.length === 5"
+           [ngClass]="{'club': players[1].hand.r.color === 'C',
+                        'diamond': players[1].hand.r.color === 'D',
+                        'heart': players[1].hand.r.color === 'H',
+                        'spade': players[1].hand.r.color === 'S'}"><span class="cardNumber">{{getCardNumber(players[1].hand.r)}}</span></div>
+      <div class="playerStock">{{players[1].stock}}</div>
+    </div>
+    <div class="person thirtyPerson">
+      <div class="playerMoney">{{players[2].name}} : {{players[2].money}}</div>
+      <span class="glyphicon glyphicon-user"></span>
+      <div class="playerCard" *ngIf="tableCards.length < 5"></div>
+      <div class="playerCard" *ngIf="tableCards.length < 5"></div>
+      <div class="playerCard openCard" *ngIf="tableCards.length === 5"
+           [ngClass]="{'club': players[2].hand.l.color === 'C',
+                        'diamond': players[2].hand.l.color === 'D',
+                        'heart': players[2].hand.l.color === 'H',
+                        'spade': players[2].hand.l.color === 'S'}"><span class="cardNumber">{{getCardNumber(players[2].hand.l)}}</span></div>
+      <div class="playerCard openCard" *ngIf="tableCards.length === 5"
+           [ngClass]="{'club': players[2].hand.r.color === 'C',
+                        'diamond': players[2].hand.r.color === 'D',
+                        'heart': players[2].hand.r.color === 'H',
+                        'spade': players[2].hand.r.color === 'S'}"><span class="cardNumber">{{getCardNumber(players[3].hand.r)}}</span></div>
+      <div class="playerStock">{{players[2].stock}}</div>
+    </div>
+    <div class="person fourtyPerson">
+      <div class="playerStock">{{players[3].stock}}</div>
+      <div class="playerMoney">{{players[3].name}} : {{players[3].money}}</div>
+      <span class="glyphicon glyphicon-user"></span>
+      <div class="playerCard openCard"
+           [ngClass]="{'club': players[3].hand.l.color === 'C',
+                        'diamond': players[3].hand.l.color === 'D',
+                        'heart': players[3].hand.l.color === 'H',
+                        'spade': players[3].hand.l.color === 'S'}"><span class="cardNumber">{{getCardNumber(players[3].hand.l)}}</span></div>
+      <div class="playerCard openCard"
+           [ngClass]="{'club': players[3].hand.r.color === 'C',
+                        'diamond': players[3].hand.r.color === 'D',
+                        'heart': players[3].hand.r.color === 'H',
+                        'spade': players[3].hand.r.color === 'S'}"><span class="cardNumber">{{getCardNumber(players[3].hand.r)}}</span></div>
+    </div>
+    <div class="stock">
+      <div>
+        <span *ngFor="let card of tableCards" class="playerCard openCard"
+              [ngClass]="{'club': card.color === 'C',
+                        'diamond': card.color === 'D',
+                        'heart': card.color === 'H',
+                        'spade': card.color === 'S'}"><span class="cardNumber">{{getCardNumber(card)}}</span></span>
+      </div>
+      <div>Pula: {{stock}}</div>
+    </div>
+  </div>
+  <div class="mainFooter">
+    <div class="buttons" *ngIf="tableCards.length < 5">
+      <div class="button btn btn-danger" (click)="pass()">Spasuj</div>
+      <div class="button btn btn-danger" (click)="wait()">Czekaj</div>
+      <div class="button btn btn-danger" (click)="pay()">Podbij</div>
+      <input class="button form-control stockInput" type="number" (input)="changeMyStock($event.target.value)" value="{{myStock}}" min="0" max="{{players[3].money}}">
+    </div>
+  </div>
+  <div class="rightColumn">
+    <div class="gameLogs">
+      <div class="logsTitle">Logi</div>
+      <div class="logs">
+        <div  *ngFor="let msg of logs" class="log">{{msg.actor}} : {{msg.message}}</div>
+      </div>
+    </div>
+    <div class="chat">
+      <div class="chatTitle">Chat</div>
+      <div>
+        <div  *ngFor="let msg of messages">Ty : {{msg}}</div>
+      </div>
+      <input class="inputChat" (keypress)="textChange($event)" (input)="changeMyMessage($event.target.value)" value="{{message}}"/>
+    </div>
+  </div>
+</div>
 

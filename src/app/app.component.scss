@@ -1,0 +1,185 @@
+.mainContent{
+  width: calc(100% - 30rem);
+  padding: 0;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: calc(100% - 5rem);
+  background-image: url("../assets/stol.png");
+
+  .person, .stock {
+    display: block;
+    font-size: 5rem;
+    position: absolute;
+
+    &.firstPerson {
+      left: 50%;
+      top: 2%;
+
+      .playerStock {
+        top: 12rem;
+      }
+    }
+    &.secondPerson {
+      left: 95%;
+      top: 45%;
+
+      .playerMoney {
+        right: 13rem;
+        width: 20rem;
+      }
+
+      .playerCard {
+        right: 19rem;
+      }
+    }
+    &.thirtyPerson {
+      left: 2.5%;
+      top: 45%;
+    }
+    &.fourtyPerson {
+      left: 50%;
+      top: 85%;
+
+      .playerCard {
+        top: -3rem;
+      }
+    }
+
+    .playerMoney {
+      height: 2rem;
+      top: 8rem;
+      font-size: 3rem;
+      position: relative;
+    }
+
+    .playerCard {
+      display: inline-block;
+      position: relative;
+      top: -1rem;
+      width: 5rem;
+      height: 7rem;
+      background-color: crimson;
+      border: 2px solid black;
+      text-align: center;
+      font-size: 3rem;
+
+      &.openCard {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: white;
+        color: white;
+        top: -3rem;
+
+        &.club {
+          background-image: url("../assets/Card_club.svg.png");
+        }
+
+        &.diamond {
+          background-image: url("../assets/Card_diamond.svg.png");
+        }
+
+        &.heart {
+          background-image: url("../assets/Card_heart.svg.png");
+        }
+
+        &.spade {
+          background-image: url("../assets/Card_spade.svg.png");
+        }
+
+        .cardNumber {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .playerStock {
+      position: absolute;
+      font-size: 3rem;
+      top: -3rem;
+      left: 1.6rem;
+    }
+  }
+
+  .stock {
+    left: 50%;
+    position: absolute;
+    top: calc(50% - 5.5rem);
+    font-size: 5rem;
+
+    .openCard {
+      margin-right: 0.2rem;
+    }
+  }
+}
+
+.mainFooter{
+  width: 100%;
+  height: 5rem;
+  position: absolute;
+  bottom: 0;
+  padding: 0 1rem;
+
+  .button {
+    font-size: 2rem;
+    margin-right: 1rem;
+    display: inline-block;
+  }
+
+  .stockInput {
+    width: 6rem;
+    top: 0.5rem;
+    position: relative;
+  }
+}
+
+.rightColumn {
+  width: 30rem;
+  height: 100%;
+  background: white;
+  right: 0;
+  position: absolute;
+  bottom: 0;
+
+  .gameLogs {
+    height: calc(100% - 30rem);
+    background: black;
+    color: gold;
+
+    .logsTitle {
+      padding: 1rem;
+      border-bottom: 1px solid gold;
+      margin-bottom: 1rem;
+    }
+
+    .logs {
+      overflow-y: auto;
+      .log {
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  .chat {
+    height: 30rem;
+    border: 1px solid black;
+
+    .chatTitle {
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .inputChat {
+    width: calc(100% - 1rem);
+    bottom: 0;
+    position: absolute;
+  }
+}
+
+
+
+
+
