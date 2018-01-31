@@ -1,0 +1,34 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+</div>
+<div>
+  <div class="leftColumn">
+    <div class="header"></div>
+    <div class="gameList">
+      <div *ngFor="let game of games, let i = index" class="gameRect" [ngClass]="{rankingowa: game.rankingowa}"
+           (click)="gameClick(i)">
+        <span class="elem">{{i+1}}</span>
+        <span class="elem">Liczba graczy: {{game.lGraczy}}</span>
+        <span class="elem">Ranking: {{game.limit}}</span>
+        <span class="elem">{{game.rankingowa ? "Rankingowa" : ""}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="rightColumn">
+    <div class="header"></div>
+    <div class="empty" *ngIf="!selectedGame">Wybierz grę</div>
+    <div class="game" *ngIf="selectedGame">
+      <div class="Myrow">
+        <span class="elem">Liczba graczy:</span> <span class="value">{{selectedGame.lGraczy}}</span>
+      </div>
+      <div class="Myrow">
+        <span class="elem">Ranking:</span> <span class="value">{{selectedGame.limit}}</span>
+      </div>
+      <div class="Myrow">
+        <span class="value">{{selectedGame.rankingowa ? "Rankingowa" : ""}}</span>
+      </div>
+    </div>
+    <button *ngIf="selectedGame" class="startButton btn btn-success" (click)="start()">START</button>
+  </div>
+</div>
+

@@ -1,0 +1,90 @@
+.leftColumn {
+  background-color: white;
+  width: calc(100% - 50rem);
+
+  .gameList {
+    padding: 1rem;
+    position: relative;
+    top: 0;
+    overflow-y: auto;
+
+    .gameRect {
+      width: 100%;
+      border: 1px solid black;
+      background-color: lightgray;
+      border-radius: 3px;
+      font-size: 2rem;
+      margin: 0.5rem 0;
+      padding: 1rem;
+      box-shadow: 3px 4px 11px 0px black;
+      cursor: pointer;
+
+      &.rankingowa {
+        background-color: gold;
+      }
+
+      .elem {
+        width: 21rem;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.rightColumn {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: white;
+  width: 50rem;
+  color: gray;
+
+  .empty {
+    width: calc(100% - 6rem);
+    margin-left: 3rem;
+    margin-top: 10rem;
+    padding: 5rem 3rem;
+    border-radius: 5px;
+    border: 2px solid gray;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .game {
+    margin-top: 5rem;
+    .Myrow {
+      width: 100%;
+
+      .elem {
+        font-size: 3rem;
+        float: left;
+        width: 50%;
+      }
+
+      .value {
+        font-size: 3rem;
+        float: right;
+        font-weight: bold;
+        width: 50%;
+      }
+    }
+  }
+
+  .startButton {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    font-size: 3rem;
+  }
+}
+
+.rightColumn, .leftColumn {
+  .header {
+    background-color: gray;
+    height: 5rem;
+    width: 100%;
+  }
+}
+
+

@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
 </div>
-<div>
+<div *ngIf="game.wrapped">
   <div class="mainContent">
     <div class="person firstPerson">
       <div class="playerMoney">{{players[0].name}} : {{players[0].money}}</div>
@@ -104,4 +104,4 @@
     </div>
   </div>
 </div>
-
+<app-game-list [start]="startGame" *ngIf="!game.wrapped"></app-game-list>

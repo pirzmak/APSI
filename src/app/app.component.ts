@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, WrappedValue} from '@angular/core';
 
 
 export class Hand {
@@ -31,11 +31,13 @@ export class AppComponent {
   messages: string[] = [];
   message: string = "";
   logs: Log[] = [];
+  game: WrappedValue;
 
   constructor() {
     this.cards = [];
     this.players = [];
     this.tableCards = [];
+    this.game = new WrappedValue(false);
     for(let i = 0; i < 4; i++) {
       for(let j = 0; j<13; j++) {
         this.cards.push(new Card(j,this.colors[i],true));
@@ -126,6 +128,11 @@ export class AppComponent {
     });
     this.myStock = 0;
     this.tableCards.push(this.getCard());
+  }
+
+  startGame() {
+    this.game = new WrappedValue(true);
+    console.log(this.game.wrapped);
   }
 
 }
